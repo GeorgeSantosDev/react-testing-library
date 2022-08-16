@@ -39,4 +39,13 @@ describe('Testing the App component', () => {
 
     expect(history.location.pathname).toBe('/favorites');
   });
+  it('should redirect to Not Found Page', () => {
+    const { history } = renderWithRouter(<App />);
+
+    history.push('/pokemons-lendarios');
+    const msgError = screen.getByRole('heading', { name: /not found/i, level: 2 });
+
+    expect(history.location.pathname).toBe('/pokemons-lendarios');
+    expect(msgError).toBeInTheDocument();
+  });
 });
