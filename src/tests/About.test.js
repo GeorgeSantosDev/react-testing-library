@@ -17,4 +17,12 @@ describe('Testing about Page', () => {
 
     expect(title).toBeDefined();
   });
+  it('should have 2 paragraph with Pokedex information', () => {
+    renderWithRouter(<About />);
+    const p1 = screen.getByText(/This application simulates a Pokédex/i);
+    const p2 = screen.getByText(/One can filter Pokémons by type/i);
+
+    expect(p1).toBeDefined();
+    expect(p2).toBeDefined();
+  });
 });
