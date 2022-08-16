@@ -162,7 +162,7 @@ const pokemons = [
     name: 'Snorlax',
     type: 'Normal',
     averageWeight: {
-      value: '460.0',
+      value: '460.0', 
       measurementUnit: 'kg',
     },
     image: 'https://cdn2.bulbagarden.net/upload/4/40/Spr_5b_143.png',
