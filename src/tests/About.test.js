@@ -11,4 +11,10 @@ describe('Testing about Page', () => {
 
     expect(pokedexInformation).toBeDefined();
   });
+  it('should have a heading h2 with the Text About Pokédex', () => {
+    renderWithRouter(<About />);
+    const title = screen.getByRole('heading', { name: 'About Pokédex', level: 2 });
+
+    expect(title).toBeDefined();
+  });
 });
