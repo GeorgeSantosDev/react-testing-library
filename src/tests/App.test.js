@@ -23,4 +23,12 @@ describe('Testing the App component', () => {
 
     expect(history.location.pathname).toBe('/');
   });
+  it('should redirect to About', () => {
+    const { history } = renderWithRouter(<App />);
+    const about = screen.getByRole('link', { name: 'About' });
+
+    userEvent.click(about);
+
+    expect(history.location.pathname).toBe('/about');
+  });
 });
