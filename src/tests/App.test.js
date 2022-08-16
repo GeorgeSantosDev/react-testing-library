@@ -31,4 +31,12 @@ describe('Testing the App component', () => {
 
     expect(history.location.pathname).toBe('/about');
   });
+  it('should redirect to Favorite Pokémons', () => {
+    const { history } = renderWithRouter(<App />);
+    const favoritePokemons = screen.getByRole('link', { name: 'Favorite Pokémons' });
+
+    userEvent.click(favoritePokemons);
+
+    expect(history.location.pathname).toBe('/favorites');
+  });
 });
