@@ -1,6 +1,5 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import renderWithRouter from '../renderWithRouter';
 import About from '../pages/About';
 
@@ -24,5 +23,12 @@ describe('Testing about Page', () => {
 
     expect(p1).toBeDefined();
     expect(p2).toBeDefined();
+  });
+  it('should have a image with specific URL', () => {
+    renderWithRouter(<About />);
+    const img = screen.getByRole('img');
+    const url = 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png';
+
+    expect(img.src).toBe(url);
   });
 });
