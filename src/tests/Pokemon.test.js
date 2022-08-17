@@ -45,8 +45,7 @@ describe('Testing Pokemon Component', () => {
         pokemon={ pokemons[0] }
       />,
     );
-    const starIcon = screen
-      .getByRole('img', { name: /Pikachu is marked as Favorite/i });
+    const starIcon = screen.getByRole('img', { name: /Pikachu is marked as Favorite/i });
 
     expect(starIcon).toBeDefined();
     expect(starIcon.src).toContain('/star-icon.svg');
